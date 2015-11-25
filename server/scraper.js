@@ -24,6 +24,7 @@ function callbackHell() {
         return hackNewsJS;
       }
     }
+}); //end hNews scrape request
 
     //reddit scrape
     request(redditUrl, function(error, response, html){
@@ -44,7 +45,8 @@ function callbackHell() {
             var mdnFun = $('#Join_the_JavaScript_community').text();
             console.log(mdnFun);
           }
-        }); //otherwise scrape python.org
+        });
+        //otherwise scrape python.org
       } else {
         //python.org scrape
         request(pyUrl, function(error, response, html) {
@@ -56,7 +58,7 @@ function callbackHell() {
         }); //end python.org scrape request
       } //end else conditional
     }); //end reddit scrape request
-  }); //end hnews scrape request
+
 } //end callbackHell function
 
 module.exports = {
